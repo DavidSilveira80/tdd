@@ -1,8 +1,9 @@
 """Programa que retorna a soma ou a média de determinada coluna de uma matriz - Uri-1182"""
 
 
-def coluna_na_matriz(C, T):
-    """Recebe como argumentos: um inteiro C para o nº da coluna a ser calculada(C = 5 para somar/média da col. 5.
+def coluna_na_matriz(coluna, T):
+    """Recebe como argumentos: um inteiro 'coluna' para o nº da coluna a ser calculada(coluna = 5
+       para somar/média da col. 5.
        E um caracter T para o tipo de cálculo a ser feito( T = 'S' para soma/ T = 'M' para média). """
 
     matriz = (
@@ -20,20 +21,17 @@ def coluna_na_matriz(C, T):
         (0, 0, 0, 0, 0, 12.0, 0, 0, 0, 0, 0, 0)
     )
 
-    def soma_da_coluna(C):  # recebe como argumento a coluna que será calculada
+    def soma_da_coluna(coluna):  # recebe como argumento a coluna que será calculada.
         soma_coluna = 0
-        for i in range(len(matriz)):  # laço que calcula o tamanho da matriz
-            for linha_da_matriz in matriz[i]:  # intera as linhas da matriz
-                if linha_da_matriz == matriz[i][C]:  # se elemento da linha corresponde ao n° da coluna a ser calculada
-                    soma_coluna += linha_da_matriz  # soma os elementos correspondentes a coluna a ser calculada
-
+        for linha in range(len(matriz)):  # intera as linhas da matriz.
+            soma_coluna += matriz[linha][coluna]  # soma os elementos correspondentes a coluna a ser calculada.
         return soma_coluna
 
     if T == 'M':
-        resp = f'A média da coluna {C} da matriz é: {soma_da_coluna(C) / 12:.1f}'
+        resp = f'A média da coluna {coluna} da matriz é: {soma_da_coluna(coluna) / 12:.1f}'
 
     elif T == 'S':
-        resp = f'A soma da coluna {C} da matriz é: {soma_da_coluna(C):.1f}'
+        resp = f'A soma da coluna {coluna} da matriz é: {soma_da_coluna(coluna):.1f}'
     return resp
 
 
