@@ -2,6 +2,9 @@
 
 
 def coluna_na_matriz(C, T):
+    """Recebe como argumentos: um inteiro C para o nº da coluna a ser calculada(C = 5 para somar/média da col. 5.
+       E um caracter T para o tipo de cálculo a ser feito( T = 'S' para soma/ T = 'M' para média). """
+
     matriz = (
         (0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 0),
         (0, 0, 0, 0, 0, 2.0, 0, 0, 0, 0, 0, 0),
@@ -17,22 +20,22 @@ def coluna_na_matriz(C, T):
         (0, 0, 0, 0, 0, 12.0, 0, 0, 0, 0, 0, 0)
     )
 
-    def soma_da_coluna(C):
+    def soma_da_coluna(C):  # recebe como argumento a coluna que será calculada
         soma_coluna = 0
-        for i in range(len(matriz)):
-            for coluna in matriz[i]:
-                if coluna == matriz[i][C]:
-                    soma_coluna += coluna
+        for i in range(len(matriz)):  # laço que calcula o tamanho da matriz
+            for linha_da_matriz in matriz[i]:  # intera as linhas da matriz
+                if linha_da_matriz == matriz[i][C]:  # se elemento da linha corresponde ao n° da coluna a ser calculada
+                    soma_coluna += linha_da_matriz  # soma os elementos correspondentes a coluna a ser calculada
+
         return soma_coluna
 
     if T == 'M':
-        resp = soma_da_coluna(C) / 12
+        resp = f'A média da coluna {C} da matriz é: {soma_da_coluna(C) / 12:.1f}'
 
     elif T == 'S':
-        resp = soma_da_coluna(C)
-
+        resp = f'A soma da coluna {C} da matriz é: {soma_da_coluna(C):.1f}'
     return resp
 
 
-print(f"{coluna_na_matriz(5, 'M'):.1f}")
+print(coluna_na_matriz(5, 'M'))
 print(coluna_na_matriz(5, 'S'))
