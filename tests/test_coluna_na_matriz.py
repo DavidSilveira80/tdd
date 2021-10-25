@@ -6,7 +6,7 @@ from unittest import TestCase
 class test_coluna_na_matriz(TestCase):
     def test_soma_coluna_5(self):
         """5 é a coluna a ser calculada S(soma) é o tipo cálculo 78.0 é o resultado esperado """
-        self.assertEqual(coluna_na_matriz(5, 'S'), 78.0)
+        self.assertEqual(coluna_na_matriz(5, 'S'), 'A soma da coluna 5 da matriz é: 78.0')
 
     def test_media_coluna_5(self):
-        self.assertEqual(coluna_na_matriz(5, 'M'), 6.5)
+        self.assertEqual(coluna_na_matriz(5, 'M'), 'A média da coluna 5 da matriz é: 6.5')
