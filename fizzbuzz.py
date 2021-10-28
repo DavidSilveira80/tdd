@@ -28,7 +28,7 @@ def robot(pos):
 
 
 if __name__ == '__main__':
-    # Teste do fizzbuzz com simples assert
+    # Teste do fizzbuzz com simples assert sem pytest
     assert robot(1) == '1'
     assert robot(2) == '2'
     assert robot(4) == '4'
