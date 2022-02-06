@@ -3,7 +3,7 @@ from coluna_na_matriz import coluna_na_matriz
 from unittest import TestCase
 
 
-class test_coluna_na_matriz(TestCase):
+class tests_coluna_na_matriz(TestCase):
     def test_soma_coluna_5(self):
         """5 é a coluna a ser calculada S(soma) é o tipo cálculo 78.0 é o resultado esperado """
         self.assertEqual(coluna_na_matriz(5, 'S'), 'A soma da coluna 5 da matriz é: 78.0')
