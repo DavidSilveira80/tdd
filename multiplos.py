@@ -1,4 +1,4 @@
-# Multiplos
+# Multiplos ordenados
 def numeros_multiplos(a, b):
     if b > a:
         if b % a == 0:
